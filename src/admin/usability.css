@@ -1,0 +1,188 @@
+/* Daily-use controls: readable text, stable targets, and visible focus. */
+.login-page,
+.portal,
+.auth-loading {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #202b33;
+}
+
+.login-form-wrap { animation: none; }
+.login-form-wrap label { font-size: 15px; font-weight: 600; color: #28343d; }
+.login-form-wrap > p { font-size: 16px; color: #52616b; }
+.login-input {
+  position: relative;
+  min-height: 58px;
+  padding: 0;
+  gap: 0;
+  border: 1px solid #8c9aa5;
+  background: #fff;
+  cursor: text;
+}
+.login-input > svg {
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #52616b;
+}
+.login-input input {
+  width: 100%;
+  min-height: 56px;
+  padding: 15px 54px 15px 46px;
+  border-radius: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #202b33;
+  caret-color: #202b33;
+}
+.login-input input::placeholder { color: #65737e; opacity: 1; }
+.login-input > button {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  color: #354b5b;
+}
+.login-input > button:hover { background: #eef3f6; }
+.login-input:focus-within {
+  border-color: #236598;
+  box-shadow: 0 0 0 3px #23659826;
+}
+.login-submit { min-height: 52px; font-size: 16px; }
+.login-security,.login-config,.inline-error { font-size: 13px; line-height: 1.6; }
+.login-security { color: #52616b; }
+.login-page .back-link { min-height: 44px; font-size: 14px; }
+.login-page .button:hover,.portal .button:hover { transform: none; }
+
+.portal .brand small { font-size: 9px; letter-spacing: 1px; }
+.portal .brand { line-height: 1.2; }
+.portal .brand-logo { width: 36px; height: 36px; border-radius: 10px; }
+.portal-sidebar nav a { min-height: 48px; font-size: 14px; color: #465660; }
+.portal-sidebar nav a.selected { color: #1B4F8A; font-weight: 600; background: #edf6fb; }
+.sidebar-bottom > a,.sidebar-bottom > button { min-height: 44px; font-size: 13px; }
+.portal-main { min-width: 0; }
+.portal-title p,.wizard-title p { font-size: 15px; color: #52616b; }
+.portal .button,.portal .button.small,.portal-title > .button,
+.wizard-actions .button,.confirm-students .button {
+  font-size: 14px;
+  line-height: 1.4;
+  min-height: 46px;
+}
+.portal .text-button { min-height: 44px; font-size: 13px; color: #315e7a; white-space: normal; }
+.portal button:disabled { opacity: 1; color: #63717b; background: #e8edf0; box-shadow: none; }
+.portal :is(button,a,input,select,textarea):focus-visible,
+.login-page :is(button,a,input):focus-visible {
+  outline: 3px solid #236598;
+  outline-offset: 3px;
+}
+.login-input input:focus-visible { outline: none; }
+.portal .wizard-progress button:disabled { background: none; }
+.portal .wizard-progress .current button { color: #245573; }
+.portal .wizard-progress .current button > span { background: #245573; color: #fff; }
+.portal .wizard-progress button { min-height: 44px; font-size: 13px; gap: 8px; }
+.portal .wizard-progress { overflow-x: auto; gap: 22px; }
+.portal .wizard-progress li { flex-shrink: 0; padding-bottom: 10px; }
+.portal .wizard-progress button > span { width: 26px; height: 26px; font-size: 12px; }
+.portal .wizard-progress .complete button { color: #2b6748; }
+.portal .choice-card,.portal .year-card,.portal .section-card { border-color: #bcc8cf; }
+.portal .choice-card.selected,.portal .year-card.selected,.portal .section-card.selected {
+  border-color: #31779b;
+  box-shadow: inset 0 0 0 1px #31779b;
+  background: #edf7fc;
+}
+.portal .choice-text b { color: #202b33; line-height: 1.3; }
+.portal .choice-text small,.portal .choice-card.large .choice-text small { font-size: 14px; color: #52616b; }
+.choice-text { min-width: 0; overflow-wrap: anywhere; }
+.portal .choice-check { width: 22px; height: 22px; border-color: #8c9aa5; }
+.portal .selected .choice-check { background: #31779b; border-color: #31779b; color: #fff; }
+.portal .choice-card.large { min-width: 0; }
+.portal .metric-card small { font-size: 14px; color: #52616b; }
+.portal .metric-card > span:last-child:not(.metric-icon) {
+  position: static; display: block; margin-top: 12px; font-size: 12px; color: #52616b;
+}
+.portal .campaign-card p,.portal .campaign-meta,.portal .campaign-card-bottom { font-size: 13px; color: #52616b; }
+.portal .campaign-meta { flex-wrap: wrap; }
+.portal .state-badge,.portal .validation-badge,.portal .valid-cell { font-size: 12px; color: #296244; }
+.portal .validation-badge.has-errors,.portal .cell-errors { color: #9b451c; }
+.portal .cell-errors { font-size: 13px; }
+.portal .reports-tabs button { min-height: 44px; font-size: 15px; color: #52616b; }
+.portal .reports-tabs button.selected { color: #202b33; font-weight: 600; }
+.portal .search-field { position: relative; min-height: 46px; padding: 0; border-color: #a6b3bc; }
+.portal .search-field > svg { position: absolute; left: 13px; pointer-events: none; color: #52616b; }
+.portal .search-field input { min-height: 44px; padding: 11px 13px 11px 39px; font-size: 15px; color: #202b33; }
+.portal .search-field input::placeholder { color: #65737e; }
+.portal :is(select,textarea),.portal .review-card > input {
+  font-size: 15px; line-height: 1.5; color: #202b33; border-color: #a6b3bc; min-height: 46px;
+}
+.portal .call-settings label,.portal .review-card > label:not(.review-ack) { font-size: 14px; color: #374b58; }
+.portal .question-row textarea { font-size: 16px; min-height: 120px; }
+.portal .question-row > button { width: 44px; min-height: 44px; flex-shrink: 0; border-radius: 7px; color: #52616b; }
+.portal .question-row > button:hover { background: #fbeee8; color: #9b451c; }
+.portal .question-row { gap: 8px; }
+.portal .question-row > div { min-width: 0; }
+.portal .add-question { min-height: 46px; font-size: 14px; color: #315e7a; border-color: #8c9aa5; }
+.portal .student-table th { font-size: 13px; font-weight: 600; color: #3a4d5a; background: #f1f5f7; padding: 15px 14px; }
+.portal .student-table td { font-size: 14px; color: #374b58; }
+.portal .student-table input,.portal .student-table select {
+  min-height: 44px; font-size: 14px; color: #202b33; border-color: #a6b3bc; background: #fff;
+}
+.portal .student-table input { width: 160px; min-width: 160px; }
+.portal .student-table select { width: 165px; }
+.portal .student-table td:nth-child(2) input { width: 115px; min-width: 115px; }
+.portal .student-table td:nth-child(5) input { width: 150px; min-width: 150px; }
+.portal .student-table td:nth-child(6) input,.portal .student-table td:nth-child(7) input { width: 95px; min-width: 95px; }
+.portal .student-table .invalid-row { background: #fff4eb; }
+.portal .pagination { font-size: 13px; color: #52616b; flex-wrap: wrap; }
+.portal .pagination button { width: 44px; height: 44px; justify-content: center; }
+.portal .validation-filters button { min-height: 44px; font-size: 13px; }
+.portal .validation-filters { flex-wrap: wrap; }
+.portal .student-heading,.portal .confirm-students,.portal .upload-support { flex-wrap: wrap; }
+.portal .campaign-config dl > div,.portal .review-facts small,.portal .review-facts b,
+.portal .settings-summary > span,.portal .retry-setting > span,.portal .detail-questions,
+.portal .pipeline b,.portal .edit-hint,.portal .confirm-students > span { font-size: 14px; }
+.portal .review-ack { font-size: 14px; color: #374b58; padding: 18px; }
+.portal .review-ack input { width: 20px; height: 20px; accent-color: #31779b; }
+.portal .toggle { width: 48px; height: 32px; padding: 5px; }
+.portal .toggle > span { width: 22px; height: 22px; }
+.portal .toggle.on { background: #31779b; }
+.portal .toggle.on > span { transform: translateX(16px); }
+.portal .portal-menu { min-height: 44px; min-width: 44px; align-items: center; justify-content: center; display: flex; }
+.portal .launch-steps b { font-size: 15px; }
+.portal .launch-steps small { font-size: 13px; }
+.portal .launch-card .button { position: static; margin-top: 20px; }
+.portal .portal-empty p,.portal .wizard-upload p { font-size: 14px; }
+.portal .selection-trail { font-size: 13px; }
+.portal .pipeline small { font-size: 12px; }
+
+@media(max-width:1150px) {
+  .portal .campaign-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .portal .question-layout { grid-template-columns: 1fr; }
+  .portal .portal-title { flex-wrap: wrap; }
+}
+@media(max-width:700px) {
+  .portal .metric-grid { grid-template-columns: 1fr; }
+  .portal .metric-card { min-height: 116px; padding: 22px; }
+  .portal .metric-icon { position: absolute; top: 23px; right: 23px; }
+  .portal .metric-card strong { font-size: 32px; }
+  .portal .metric-card small { max-width: calc(100% - 42px); }
+  .portal .campaign-grid { grid-template-columns: 1fr; }
+  .portal .choice-grid.departments { grid-template-columns: 1fr; }
+  .portal .choice-card { min-height: 150px; }
+  .portal .choice-card.large { flex-direction: column; align-items: flex-start; }
+  .portal .choice-card.large .choice-text { padding-right: 0; }
+  .portal .choice-grid.sections { grid-template-columns: repeat(2,1fr); }
+  .portal .reports-tabs { gap: 19px; overflow-x: auto; }
+  .portal .reports-tabs button { white-space: nowrap; }
+  .portal .admin-identity { flex-shrink: 0; }
+  .portal .portal-breadcrumb { flex-wrap: wrap; }
+  .portal .wizard-actions { flex-wrap: wrap; }
+  .portal :is(input,select,textarea),.portal .search-field input,
+  .portal .student-table input,.portal .student-table select { font-size: 16px; }
+  .portal .review-ack input { width: 20px; }
+}
