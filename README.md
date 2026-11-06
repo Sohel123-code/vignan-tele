@@ -11,6 +11,12 @@ npm run dev
 
 The homepage is `/`; the protected portal is `/admin`. Static hosting must serve `index.html` for `/admin`. `npm run build` generates `dist/`.
 
+### Vercel
+
+Keep `vercel.json` beside `package.json` in the Vercel project root. It selects Vite, builds into `dist`, and rewrites client routes such as `/admin` to `index.html`, so direct links and refreshes work. Commit and push this file with the source, then deploy the new commit; redeploying an older commit will not include the fix.
+
+Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in the Vercel project's environment variables for the deployment environment before building. Local `.env` files remain ignored. No secret/service-role key is needed on Vercel for this frontend.
+
 ## Supabase setup and upgrades
 
 1. Set these public values in `.env`:
