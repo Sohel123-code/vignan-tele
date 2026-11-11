@@ -1,6 +1,6 @@
 ﻿# VIIT AI Feedback
 
-React and Vite college administration interface. The homepage retains the supplied Framer template. The admin portal uses the VIIT logo, readable cards, and a navigation drawer that opens on demand. No AI calling or telephony is connected.
+React and Vite college administration interface. The homepage retains the supplied Framer template. The admin portal uses the VIIT logo, readable cards, and a navigation drawer that opens on demand. Calling uses Outpero's direct v1 API with automatic result polling: no ngrok or webhook is required. See **[CALLING_SETUP.md](CALLING_SETUP.md)** for agent selection, credentials, migration and hosting.
 
 ## Run
 
@@ -40,7 +40,7 @@ The public API key cannot create tables or SQL functions. Missing database objec
 - **Students:** upload CSV/XLSX, validate and edit, confirm, and save to the selected section. Existing student IDs are protected from overwrites. Lists can be exported.
 - **Attendance:** manually mark present, absent, or late for a date, then save. Failed saves retain pending changes.
 - **Feedback:** record a concern and move it from pending to reviewed to resolved.
-- **Calling:** prepare student lists, questions, and preferences; save the setup. Start calling remains disabled. There are no fabricated responses, transcripts, or call summaries.
+- **Calling:** create a section campaign, select an Instant/outbound Outpero agent, edit ordered/typed questions, generate its script, import Excel contacts, check without dialing, start/pause/retry and view live feedback with transcripts, captured answers and CSV export. The Node backend automatically polls Outpero, even when the browser closes. Root `.env` credentials are supported. Existing prepared communication setups remain available under a collapsed preparation option; they do not place calls.
 - **Faculty:** add and view name, email, branch, and designation; search or filter by branch. Faculty email addresses are unique, ignoring case.
 
 Branches, sections, students, attendance, feedback, communication setups, activity history, and faculty are saved in Supabase. Unsaved forms do not survive a page reload. Older browser-local campaign records are not automatically imported into these tables.
@@ -56,6 +56,7 @@ Phone numbers must be valid Indian mobile numbers. Attendance/marks range from 0
 ```sh
 npm test
 npm run test:ui
+npm run test:calling-ui
 npm run build
 ```
 

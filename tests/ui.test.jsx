@@ -40,7 +40,7 @@ describe('college dashboard',()=>{
   render(<Workspace user={admin} onSignOut={vi.fn()}/>);
   expect(await screen.findByRole('img',{name:'6 saved activities during the selected period'})).toBeTruthy();
   expect(screen.getByRole('button',{name:/Open CSE: 120 students, 3 sections, 8 faculty/})).toBeTruthy();
-  expect(screen.getByText('Calling is not connected.')).toBeTruthy();
+  expect(screen.getByText('Open a section to manage calls.')).toBeTruthy();
   await user.selectOptions(screen.getByLabelText('Chart period'),'7');await waitFor(()=>expect(db.fetchDashboard).toHaveBeenLastCalledWith(7));
   await screen.findByText('Latest concern reviewed');await user.click(screen.getByRole('button',{name:'Load older history'}));
   await screen.findByText('Older section created');expect(db.fetchCollegeHistory).toHaveBeenLastCalledWith(1);
@@ -70,6 +70,7 @@ describe('college dashboard',()=>{
   await user.click(screen.getByRole('tab',{name:'Calling'}));
   expect(await screen.findByRole('heading',{name:'Calling'})).toBeTruthy();
   expect(screen.getByRole('tab',{name:'Calling'}).getAttribute('aria-selected')).toBe('true');
+  await user.click(screen.getByText('Prepare a student communication setup'));
   await user.click(screen.getByRole('button',{name:'Feedback calling'}));
   expect(screen.getByRole('heading',{name:'Add your students.'})).toBeTruthy();
  });

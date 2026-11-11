@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "server": "node server/index.js",
+    "server:dev": "node --watch server/index.js",
+    "calling:check": "node server/check.js",
+    "test:calling-ui": "vitest run --environment jsdom --testTimeout=30000 tests/calling.test.jsx",
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
@@ -12,11 +16,17 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
     "lucide-react": "^0.468.0",
+    "multer": "^2.5.0",
     "papaparse": "^5.5.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "read-excel-file": "^6.0.1"
+    "read-excel-file": "^6.0.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.15",
